@@ -1,53 +1,157 @@
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
 body {
     display: grid;
-    grid: 1fr 4fr / 1fr 4fr;
+    grid: 10rem 45rem / 15rem 4fr;
 }
 
 #sidebar {
     background-color: teal;
     grid-row: 1 /3;
+    color: white;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    display: grid;
+}
+
+li {
+    gap: 40px;
+    align-items: center;
+    
 }
 
 #header {
-    background-color: bisque;
+    box-shadow: 4px 0 1px 1px rgba(0,0,0,0.3);
     display: grid;
     align-items: center;
-    grid: 1fr 3fr / 3fr 1fr;
+    grid: 2rem 8rem / 2fr 1fr;
+    padding: 10px;
+}
+
+#search {
+    display: flex;
+}
+
+#searchBar {
+    flex: 1;
+    border-radius: 12px;
+    border: none;
+    background-color: lightgrey;
 }
 
 #admin {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 #name {
+    justify-self: start;
     display: grid;
     grid: 1fr 1fr / 1fr 3fr;
+}
+
+#hi {
+    align-self: end;
+}
+
+#user {
+    align-self: start;
 }
 
 .pfp {
     height: 40px;
 }
 
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 10px;
+}
+
+#buttons>button {
+    border: none;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    height: 2rem;
+}
+
 #mainPfp {
-    height: 100px;
+    height: 70px;
     grid-area: 1 / 1 / 3 / 2;
 }
 
 #main {
-    background-color: coral;
+    background-color: lightgrey;
     grid-area: 2 / 2 / 3 / 3;
     display: grid;
     grid: 1fr 1fr / 2fr 1fr;
 }
 
-#cards, #announceContain, #trendContain {
+#projects {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    grid-template-rows: 2rem 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.project, .heading {
+    grid-area: 1 / 1 / 2 / 3;
+    align-self: end;
+}
+
+.card {
     background-color: white;
-    width: 100%;
-    
 }
 
 #projects {
     grid-area: 1 / 1 / 3 / 2;
+}
+
+#announceContain, #trendContain {
+    background-color: white;
+    width: 100%;
+}
+
+#announcements {
+    display: grid;
+    padding: 10px;
+    gap: 10px;
+    grid-template-rows: 2rem 1fr;
+    grid-template-columns: 1fr;
+}
+
+.announce, .heading {
+    align-self: center;
+}
+
+#trending {
+    display: grid;
+    padding: 10px;
+    gap: 10px;
+    grid-template-rows: 2rem 1fr;
+    grid-template-columns: 1fr;
 }
