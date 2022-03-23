@@ -31,6 +31,7 @@ body {
     display: grid;
     grid-template-rows: 6rem 1fr 1.5fr;
     padding: 20px;
+    box-shadow: 4px 4px 4px 4px black;
 }
 
 #logo {
@@ -42,7 +43,7 @@ body {
 
 h1 {
     
-    font-size: larger;
+    font-size: 23px;
 }
 
 ul {
@@ -57,18 +58,23 @@ li {
     align-items: center;
     grid-template-columns: 1fr 3fr;
     gap: 10px;
+    font-weight: bold;
 }
 
 #header {
-    box-shadow: 4px 0 1px 1px rgba(0,0,0,0.3);
+    
     display: grid;
     align-items: center;
     grid: 2rem 8rem / 2fr 1fr;
     padding: 20px;
+    font-weight: bold;
+    box-shadow: 4px 4px 4px 4px black;
+    
 }
 
 #search {
     display: flex;
+    gap: 5px;
 }
 
 #searchBar {
@@ -89,6 +95,8 @@ li {
     justify-self: start;
     display: grid;
     grid: 1fr 1fr / 1fr 3fr;
+    column-gap: 10px;
+    row-gap: 3px;
 }
 
 #hi {
@@ -97,6 +105,7 @@ li {
 
 #user {
     align-self: start;
+    font-size: 24px;
 }
 
 .pfp {
