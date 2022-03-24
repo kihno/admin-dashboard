@@ -18,20 +18,30 @@ time, mark, audio, video {
 	border: 0;
 }
 
+:root {
+    --main-color: #55433b;
+    --accent-color: #e04800;
+    --light-color: #bda79e;
+}
+
 body {
     display: grid;
-    grid: 10rem 45rem / 15rem 4fr;
+    grid: 11rem 60rem / 15rem 4fr;
     font-family: 'Ubunutu', sans-serif;
 }
 
+.subtext, .userTag {
+    color: grey;
+}
+
 #sidebar {
-    background-color: teal;
+    background-color: var(--main-color);
     grid-row: 1 /3;
     color: white;
     display: grid;
-    grid-template-rows: 6rem 1fr 1.5fr;
+    grid-template-rows: 6rem 1fr 2fr;
     padding: 20px;
-    box-shadow: 4px 4px 4px 4px black;
+    box-shadow: 1px 0 4px 1px rgba(0,0,0,0.3);
 }
 
 #logo {
@@ -62,14 +72,14 @@ li {
 }
 
 #header {
-    
     display: grid;
     align-items: center;
     grid: 2rem 8rem / 2fr 1fr;
     padding: 20px;
     font-weight: bold;
-    box-shadow: 4px 4px 4px 4px black;
-    
+    box-shadow: 0 1px 4px 2px rgba(0,0,0,0.3); 
+    background-color: black;
+    color: white;
 }
 
 #search {
@@ -81,14 +91,14 @@ li {
     flex: 1;
     border-radius: 12px;
     border: none;
-    background-color: lightgrey;
+    background-color: var(--light-color);
 }
 
 #admin {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 30px;
 }
 
 #name {
@@ -110,22 +120,26 @@ li {
 
 .pfp {
     height: 40px;
+    grid-area: 1 / 1 / 3 / 2;
 }
 
 #buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
+    justify-items: end;
+    align-content: center;
     gap: 10px;
 }
 
 #buttons>button {
     border: none;
-    background-color: teal;
+    background-color: var(--accent-color);
     color: white;
     font-weight: bold;
+    font-size: 14px;
     border-radius: 20px;
-    height: 2rem;
+    height: 40px;
+    width: 100px;
 }
 
 #mainPfp {
@@ -134,18 +148,24 @@ li {
 }
 
 #main {
-    background-color: lightgrey;
+    background-color: var(--light-color);
     grid-area: 2 / 2 / 3 / 3;
     display: grid;
-    grid: 1fr 1fr / 2fr 1fr;
+    grid: 30rem 1fr / 3fr 1fr;
+    padding: 20px;
 }
 
 #projects {
     display: grid;
-    gap: 10px;
     padding: 10px;
-    grid-template-rows: 2rem 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr;
+}
+
+#cardContain {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .project, .heading {
@@ -155,6 +175,18 @@ li {
 
 .card {
     background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    display: grid;
+    grid-template-rows: 2rem auto 2rem;
+    border-left: 10px solid var(--accent-color);
+}
+
+.projectIcons {
+    justify-self: end;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
 }
 
 #projects {
@@ -163,25 +195,61 @@ li {
 
 #announceContain, #trendContain {
     background-color: white;
-    width: 100%;
+    display: grid;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+#announceContain {
+    place-content: center;
+    gap: 20px;
+}
+
+#trendContain {
+    place-items: stretch;
+
 }
 
 #announcements {
     display: grid;
     padding: 10px;
-    gap: 10px;
-    grid-template-rows: 2rem 1fr;
+    grid-template-rows: 50px 1fr;
     grid-template-columns: 1fr;
 }
 
-.announce, .heading {
+#announceContain>div:nth-child(2),
+#announceContain>div:nth-child(3) {
+    padding-top: 20px;
+    border-top: 1px solid lightgrey;
+}
+
+.announce{
+    
+    text-overflow: ellipsis;
+}
+
+.heading {
     align-self: center;
 }
 
 #trending {
     display: grid;
     padding: 10px;
-    gap: 10px;
-    grid-template-rows: 2rem 1fr;
+    grid-template-rows: 50px 1fr;
     grid-template-columns: 1fr;
+}
+
+.social {
+    display: grid;
+    row-gap: 2px;
+    column-gap: 20px;
+    grid: 20px 20px / 40px 1fr;
+}
+
+.userName {
+    align-self: end;
+}
+
+.userTag {
+    align-self: start;
 }
