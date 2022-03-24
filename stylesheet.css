@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -27,7 +27,7 @@ time, mark, audio, video {
 body {
     display: grid;
     grid: auto 4fr / 1fr 5fr;
-    font-family: 'Ubunutu', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 a{
@@ -50,6 +50,8 @@ img, button, .userName {
     color: grey;
 }
 
+/* SIDEBAR */
+
 #sidebar {
     background-color: var(--main-color);
     grid-row: 1 /3;
@@ -63,7 +65,7 @@ img, button, .userName {
 #logo {
     display: grid;
     gap: 20px;
-    grid: 36px / 36px 1fr;
+    grid: 48px / 48px 1fr;
     align-items: center;
 }
 
@@ -86,6 +88,8 @@ li {
     gap: 10px;
     font-weight: bold;
 }
+
+/*HEADER*/
 
 #header {
     display: grid;
@@ -168,11 +172,13 @@ li {
     grid-area: 1 / 1 / 3 / 2;
 }
 
+/*MAIN*/
+
 #main {
     background-color: var(--light-color);
     grid-area: 2 / 2 / 3 / 3;
     display: grid;
-    grid: 1fr 1fr / 3fr 1fr;
+    grid: 1.5fr 1fr / 3fr 1fr;
     padding: 20px;
 }
 
@@ -222,14 +228,14 @@ li {
 }
 
 #announceContain {
-    place-content: center;
-    gap: 20px;
+    align-content: space-around;
+    gap: 30px;
     grid-template-rows: 7rem 7rem 7rem;
 }
 
 #trendContain {
-    place-items: stretch;
-    gap: 15px;
+    place-content: center;
+    align-items: center;
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
@@ -241,9 +247,9 @@ li {
 }
 
 #announceContain>div:nth-child(2),
-#announceContain>div:nth-child(3) {
-    padding-top: 20px;
-    border-top: 1px solid lightgrey;
+#announceContain>div:nth-child(1) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgrey;
 }
 
 .announce{
